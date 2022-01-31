@@ -51,7 +51,7 @@ Default: 1rem
 }
 
 html {
-  font-size: 10px;
+  font-size: 62.5%;
 }
 
 body {
@@ -68,13 +68,13 @@ body {
 .container {
   max-width: 120rem;
   margin: 0 auto;
-  padding: 0 4.8rem;
+  padding: 0 3.2rem;
 }
 
 .grid {
   display: grid;
-  column-gap: 9.6rem;
-  row-gap: 6.4rem;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
 }
 
 .grid:not(:last-child) {
@@ -97,7 +97,7 @@ body {
   grid-template-columns: repeat(5, 1fr);
 }
 
-.hero-heading-primary,
+.heading-primary,
 .heading-secondary,
 .heading-tertiary {
   font-weight: 700;
@@ -105,20 +105,20 @@ body {
   color: #333;
 }
 
-.hero-heading-primary {
-  font-size: 4.4rem;
+.heading-primary {
+  font-size: 5.2rem;
   line-height: 1;
   /*color: #2e1907;*/
   margin-bottom: 3.2rem;
 }
 
 .heading-secondary {
-  font-size: 4.2rem;
+  font-size: 4.4rem;
   margin-bottom: 9.6rem;
   line-height: 1.2;
 }
 .heading-tertiary {
-  font-size: 3.2rem;
+  font-size: 3rem;
   line-height: 1.2;
   margin-bottom: 2.6rem;
 }

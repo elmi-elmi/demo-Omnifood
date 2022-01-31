@@ -4,10 +4,13 @@
 .header {
   height: 9.6rem;
   display: flex;
+  /*width: 130rem;*/
   justify-content: space-between;
   align-items: center;
   background-color: #fdf2e9;
   padding: 0 3.6rem;
+
+  /*margin:auto;*/
 }
 
 .logo {
@@ -26,7 +29,7 @@
 .main-nav-list {
   list-style: none;
   display: flex;
-  gap: 1.6rem;
+  gap: 4.8rem;
 }
 .main-nav-link:link,
 .main-nav-link:visited {
@@ -88,19 +91,20 @@
 /*============================================================*/
 .hero-section {
   background-color: #fdf2e9;
-  padding: 4.8rem 3.2rem 9.6rem 3.2rem;
+  padding: 4.8rem 0 9.6rem 0;
 }
 .hero {
   max-width: 130rem;
   margin: 0 auto;
-  /*display: grid;*/
-  /*grid-template-columns: 1fr 1fr;*/
-  /*align-items: center;*/
+  padding: 0 3.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
 }
 
 .hero-description {
   font-size: 2rem;
-  margin-bottom: 3.2rem;
+  margin-bottom: 4.8rem;
   line-height: 1.3;
 }
 
@@ -329,7 +333,7 @@
   padding: 1.6rem;
 }
 .gallery-item {
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 .gallery-img {
   width: 100%;
