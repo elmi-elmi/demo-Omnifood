@@ -1,0 +1,183 @@
+-----------------------------------------------------------------------
+01 - Welcome and First Steps  ✔️
+-----------------------------------------------------------------------
+
+-----------------------------------------------------------------------
+02 - HTML Fundamentals  ✔️
+-----------------------------------------------------------------------
+
+-----------------------------------------------------------------------
+03 - CSS Fundamentals  ✔️
+-----------------------------------------------------------------------
+
+-----------------------------------------------------------------------
+04 - Layouts_ Floats, Flexbox, and CSS Grid Fundamentals ✔️
+-----------------------------------------------------------------------
+how clear floats (clearing float)
+
+    clearfix
+
+    .clearfix::after{
+        clear:both;
+        content:""'
+        display:block;
+    }
+
+    box-sizing: border-box;
+
+17: grid
+    repeat
+    grid-template-columns:repeat(4, 1fr)
+
+    18:
+    grid-column: 1 / 2 or 1 or 1 / span 3 or 1 / -1 pr 1 / -2
+
+
+
+
+-----------------------------------------------------------------------
+05 - Web Design Rules and Framework ✔️
+-----------------------------------------------------------------------
+
+• Overview of website personalities:
+    1 - Serious/Elegent
+    2 - Minimalist/Simple
+    3 - Plain/Neutral
+    4 - Bold/Confident
+    5 - Calm/Peacful
+    6 - Startup/Upbeat
+    7 - Playful/Fun
+
+
+• video 6:
+    Use a tool to check contrast between text and background colors;
+    Conterast ratio needs to be at least to be at least
+        4.5:1 --> normal text
+        3:1   --> large  text
+https://coolors.co/ --> contrast checker
+
+
+
+-----------------------------------------------------------------------
+06 - Components and Layout Patterns ✔️
+-----------------------------------------------------------------------
+14:
+    overflow: scroll  // hidden
+    flex-shrink: 0;
+
+
+-----------------------------------------------------------------------
+07 - Omnifood Project – Setup and Desktop Version video 5
+-----------------------------------------------------------------------
+7:
+    max-width.
+
+    rem --> root element font size
+        root is html (parent element of all the others)
+
+    1rem --> equal  default browser font size with
+             it is always 16px and user doesn't change it;
+
+    we want set default font size to 10px
+        that's mean 1rem = 10px --> css : html{font-size:10px}
+        but this creates a problem --> if user change the font size of browser, it does not change because in font fixed to 10px;
+    alternative:
+        user percentage:
+        css:
+            html{ font-size: 62.5% }  // 10/16 = 0.625
+
+
+9:
+    a trick to  add border inside:
+        box-shadow: inset 0 0 0 3px #fff
+
+10:
+
+11:
+
+13:
+    reusable grid
+
+14:
+
+16:
+    How to gray all colors(even balck) in the images:
+    filter: brightness(0) // the colors come black
+    opacity: 50%
+
+
+20:
+
+
+23:
+        :not
+
+        .grid:not(:lastchild){
+            margin-bottom: 9.6rem; // add margin to all child except las child;
+        }
+
+
+
+25:
+    role
+    aria-label
+
+    <div role="img" aria-label="woman eating"></div>
+
+
+    action in form:
+        send data to that place sat in action attribute when submitted;
+
+    for in label connected to input with id
+
+    <label for='full-name'></label>
+    <input id='full-name/>
+
+
+    select option
+
+    if leave emplty value attribute in option user can not selects that
+
+
+
+    input required
+
+27:
+
+    psudo code :
+        input::placeholder{}
+
+
+
+    global focus
+
+    *:focus{
+        // outline:none;
+        // outline:4px dotted #e67e22;
+        // outline-offset:8pxl
+        // box-shadow: 0 0 0 0.8rem rgba(...,0.1)
+
+    }
+
+
+
+
+-----------------------------------------------------------------------
+08 - Omnifood Project – Responsive Web Design
+-----------------------------------------------------------------------
+4:
+    *******************************************************************
+    rem and em in do NOT depend on html font-size in media queries!
+    Instead, 1rem = 1em = 16px
+
+    note: actually in paranteses comming after meadi query -- @media(max-width:(here))
+    *******************************************************************
+
+
+
+////////////////////
+idea:
+    hover on overlap imges ---> show that image
+
+6: 9min
+
