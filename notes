@@ -331,6 +331,73 @@ https://coolors.co/ --> contrast checker
 
 7:
 
+    lighthouse tools
+
+
+8:
+    meta description for search engain
+
+    <meta name="description" content="Omnifood is an AI..."/>
+
+
+    fav icon  (icon in top of browser)
+
+
+    browser:
+    <link rel="icon" href="./img/favicon.png"
+
+    apple touch icon
+        <link rel="apple-touch-icon" href="./img/favicon-192.png">
+
+    other device:
+        create file:
+            manifest.webmanifest
+
+            {
+                "icons":[
+                    {"src":"img/favicon-192.png",
+                     "type":"img/png", "size":"192*192"},
+                      {"src":"img/favicon-512.png",
+                     "type":"img/png", "size":"512*512"},
+                ]
+
+            }
+
+    html:
+            <link rel="manifest" href="manifest.webmanifest">
+
+
+9:
+    Image Optimizations
+
+    use this site:
+        https://squoosh.app/
+
+    ******************
+    actuall size of image should alway double of size that diplayed  on the screen;
+    ******************
+
+    intrinsic size
+    render size
+
+    jpeg ---> we can not transparent it so use png
+
+
+    webp is a new high performance format for use in web
+
+    webp is new, so we need an alternative for others:
+        we can do as below and browser select the best choice.
+
+        <picture>
+            <source srcset = "img/hero.webp" type="image/webp" />
+            <source srcset = "img/hero.png" type="image/png" />
+            <img src class alt .... >
+        </picture>
+
+
+
+10:
+    Demployment to Netlify
 
 
 
