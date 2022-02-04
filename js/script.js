@@ -1,38 +1,54 @@
 ///////////////////////////////////////////////////////////
 
-const btnNavEl = document.querySelector('.btn-mobile-nav');
-const headerEl = document.querySelector('.header')
+const btnNavEl = document.querySelector(".btn-mobile-nav");
+const headerEl = document.querySelector(".header");
 
-btnNavEl.addEventListener('click',function(){
-  headerEl.classList.toggle('open-nav')
-})
+btnNavEl.addEventListener("click", function () {
+  headerEl.classList.toggle("open-nav");
+});
 
-const links = document.querySelectorAll('a:link');
-links.forEach(link=>{
-  link.addEventListener('click',function(e){
+const links = document.querySelectorAll("a:link");
+links.forEach((link) => {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
-    console.log(e)
-    const href = this.getAttribute('href');
-    console.log(href)
+    console.log(e);
+    const href = this.getAttribute("href");
+    console.log(href);
 
+    if (href === "#") window.scrollTo({ top: 0, behavior: "smooth" });
 
-    if(href==='#')  window.scrollTo({top:0, behavior:'smooth'})
-
-    if(href!=='#' && href.startsWith('#') ) {
-      console.log(href)
+    if (href !== "#" && href.startsWith("#")) {
+      console.log(href);
       const sectionEl = document.querySelector(href);
 
-      sectionEl.scrollIntoView({behavior:'smooth'});
+      sectionEl.scrollIntoView({ behavior: "smooth" });
     }
-    console.log(link.classList.contains('main-nav-link'))
-    if(link.classList.contains('main-nav-link')){
-      headerEl.classList.toggle('open-nav')
+    console.log(link.classList.contains("main-nav-link"));
+    if (link.classList.contains("main-nav-link")) {
+      headerEl.classList.toggle("open-nav");
     }
+  });
+});
 
-  })
+// sticky navigation
+const hero = document.querySelector(".hero-section");
+const option = {
+  root: null,
+  threshold: 0,
+  rootMargin:'-80px'
+};
+const observer = function (entries, observer) {
+  entries.forEach((entry) => {
+    console.log(entry);
+    if (entry.isIntersecting === false)
+      document.querySelector(".header").classList.add("sticky");
+    if(entry.isIntersecting === true)
+      document.querySelector('.header').classList.remove('sticky');
+  });
+};
+const obs = new IntersectionObserver(observer, option);
 
-})
-
+obs.observe(hero);
 // Fixing flexbox gap property missing in some Safari versions
 function checkFlexGap() {
   var flex = document.createElement("div");

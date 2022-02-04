@@ -174,10 +174,170 @@ https://coolors.co/ --> contrast checker
     *******************************************************************
 
 
+7 :
+        display: none --> allows not transition at all
+        so you can do that:
+
+        (animate display none)
+
+        // 1 - hide it visually
+        opacity: 0;
+
+        // 2 - Make it unaccessible to mouse and keyboard
+        pointer-events: none;
+
+        // 3 - Hide it from screen riders
+        visibility: hidden;
+
+        and then
+
+        // 4
+        opacity: 1;
+        pointer-events:auto;
+        visibility:visible;
+
+        now you can use:
+            transition: all 1s;
+
+
+
+
+        overflow in body: also you must set overflow in html
+        and
+        only works if there is nothing absolutley positioned in relation to body;
+
+
+        overflow-x body html
+
+        transition ease-in ease-in-out
+
+
+-----------------------------------------------------------------------
+09 - Omnifood Project – Effects, Optimizations and Deployment
+-----------------------------------------------------------------------
+
+4:
+
+    Smooth scrolling css does not work in Safari browser.
+
+    css:
+    html{
+    scroll:smooth;
+    }
+
+    So an alternative way is JS:
+
+        for scrolling to cetain location:
+
+            window.scrollTo({top:0, behavior:'smooth'})
+
+        for certian Element:
+
+            sectionEl.scrollIntoView({behavior})
+
+
+5:
+    sticky
+
+    intersection observer api
+
+6:
+    backdrop filter  ( attention: opacity does not work with backdrop)
+        and safari need to add -webki-
+
+        background-color:rgba(0,0,0,0.9)
+        backdrop-filter: blur(10px)
+        -webkit-backdrop-filter: blur(10px)
+
+
+    flexbox gap in safari
+
+
+    js:
+
+        function checkFlexGap() {
+            var flex = document.createElement("div");
+            flex.style.display = "flex";
+            flex.style.flexDirection = "column";
+            flex.style.rowGap = "1px";
+
+            flex.appendChild(document.createElement("div"));
+            flex.appendChild(document.createElement("div"));
+
+            document.body.appendChild(flex);
+            var isSupported = flex.scrollHeight === 1;
+            flex.parentNode.removeChild(flex);
+            console.log(isSupported);
+
+            if (!isSupported) document.body.classList.add("no-flexbox-gap");
+            }
+        checkFlexGap();
+
+    css:
+
+
+// https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
+
+        /*
+        .no-flexbox-gap .main-nav-list li:not(:last-child) {
+        margin-right: 4.8rem;
+        }
+
+        .no-flexbox-gap .list-item:not(:last-child) {
+        margin-bottom: 1.6rem;
+        }
+
+        .no-flexbox-gap .list-icon:not(:last-child) {
+        margin-right: 1.6rem;
+        }
+
+        .no-flexbox-gap .delivered-faces {
+        margin-right: 1.6rem;
+        }
+
+        .no-flexbox-gap .meal-attribute:not(:last-child) {
+        margin-bottom: 2rem;
+        }
+
+        .no-flexbox-gap .meal-icon {
+        margin-right: 1.6rem;
+        }
+
+        .no-flexbox-gap .footer-row div:not(:last-child) {
+        margin-right: 6.4rem;
+        }
+
+        .no-flexbox-gap .social-links li:not(:last-child) {
+        margin-right: 2.4rem;
+        }
+
+        .no-flexbox-gap .footer-nav li:not(:last-child) {
+        margin-bottom: 2.4rem;
+        }
+
+        @media (max-width: 75em) {
+        .no-flexbox-gap .main-nav-list li:not(:last-child) {
+            margin-right: 3.2rem;
+        }
+        }
+
+        @media (max-width: 59em) {
+        .no-flexbox-gap .main-nav-list li:not(:last-child) {
+            margin-right: 0;
+            margin-bottom: 4.8rem;
+        }
+        }
+        */
+
+7:
+
+
+
+
+
 
 ////////////////////
 idea:
     hover on overlap imges ---> show that image
-
 
 
